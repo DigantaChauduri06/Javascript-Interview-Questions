@@ -9,25 +9,24 @@ const fetchWithTimeout = (url, timer) => {
         const controller = new AbortController();
         const signal = controller.signal;
         let id = null
-        fetch(url)
+        fetch(url, { signal })
             .then(res => {
-                if (id) {
-                    clearTimeout(id);
-                }
+                clearTimeout(id);
                 return res.json();
             })
             .then(data => resolve(data))
             .catch(err => reject(err))
 
         id = setTimeout(() => {
-            if (!signal.aborted)
-                controller.abort();
+            // if (!signal.aborted)
+            console.log("ABORTED");
+            controller.abort();
         }, timer)
     })
 }
 
 
-fetchWithTimeout('https://jsonplaceholder.typicode.com/todos/1', 200)
+fetchWithTimeout('https://jsonplaceholder.typicode.com/todos/1', 1)
     .then(res => {
         console.log(res)
     })
