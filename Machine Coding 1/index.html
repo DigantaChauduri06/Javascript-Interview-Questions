@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      main {
+        width: 500px;
+        margin: 10px auto 0 auto;
+      }
+
+      #search {
+        padding: 10px;
+        width: 100%;
+      }
+
+      #suggestion-area {
+        border: 1px solid red;
+        margin-top: 10px;
+        min-height: 100px;
+        padding: 5px;
+        position: relative;
+        /* display: none; */
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <input type="search" id="search" placeholder="Enter your query" />
+      <div id="suggestion-area"></div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
