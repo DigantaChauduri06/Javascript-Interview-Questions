@@ -1,0 +1,21 @@
+#carousel {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+#carousel-main {
+  flex: 1;
+  justify-content: center;
+  display: flex;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+.arrow {
+  cursor: pointer;
+  font-size: 30px;
+  margin: 0 10px;
+}
